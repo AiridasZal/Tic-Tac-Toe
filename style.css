@@ -1,0 +1,262 @@
+/* Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+body{
+    background-color: #333E50;
+    color: whitesmoke;
+}
+
+.game > #playerInformation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+input{
+    color: #D3D0CB;
+    font-size: 15px;
+    border-radius: 8px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+}
+
+input::placeholder{
+    color: #7C8A9D;
+}
+
+input:focus{
+    outline: none;
+}
+
+.inputField{
+    display: grid;
+    background: #2F3A4A;
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.1), inset 0px 1px 2px rgba(34, 41, 52, 0.7);
+    border-radius: 4px;
+    grid-template-columns: auto 1fr;
+    margin-bottom: 25px;
+    outline:none;
+    border:none;
+}
+
+.inputField > .label{
+    display: flex;
+    position: relative;
+    font-size: 15px;
+    margin: 15px 5px 17px 19px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #D3D0CB;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 0 1000px #2F3A4A inset;
+    -webkit-background-clip: text;
+    transition: all 0s 50000s;
+}
+
+.playerForm{
+    margin-top: 20vh;
+}
+
+.playerForm > h1, h3{
+    text-align: center;
+    font-weight: 400;
+}
+
+.playerForm > h3{
+    margin-bottom: 37px;
+    font-size: 26px;
+}
+
+.playerForm > h1{
+    font-size: 40px;
+    margin: 5px;
+}
+
+button{
+    border-radius: 8px;
+    background: #D94255;
+    border: none;
+    color: white;
+}
+
+button#startGame{
+    height: 55px;
+    width: 340px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+button:disabled{
+    cursor: not-allowed;
+    background: #7C8A9D;
+}
+
+button.gameBoardButton{
+    height: 45px;
+    width: 75px;
+}
+
+#gameBoard{
+    margin-top: 16vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.board{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.cell{
+    background: #2F3A4A;
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.1), inset 0px 1px 2px rgba(34, 41, 52, 0.7);
+    border-radius: 4px;
+    height: 80px;
+    width: 80px;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cell.taken{
+    cursor: not-allowed;
+}
+
+.cell.empty:hover{
+    background: #3B4A5F;
+}
+
+.controlButtons{
+    display: grid;
+    max-width: 280px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 25px auto;
+}
+
+.controlButtonsAlign{
+    margin-right: 28px;
+}
+
+#gameBoard > h1, h3, h4{
+    text-align: center;
+    font-weight: 400;
+}
+
+#gameBoard > h1{
+    font-size: 40px;
+    margin: 5px;
+}
+
+#gameBoard > h3{
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+#gameBoard > h4{
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+#gameBoard > h4#statusText{
+    font-size: 16px;    
+}
+
+.versus{
+    color: #D94255
+}
+
+.highlighted{
+    background: #3B4A5F;
+}
+
+#gameBoard > h4#statusText.matchEnd{
+    color: #7CAE7A;
+    font-weight: 600;
+}
+
+#gameBoard > h4#statusText.matchDraw{
+    color: #FDBA35;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 1024px) {
+    .playerForm{
+        margin-top: 10vh;
+    }
+    #gameBoard{
+        margin-top: 10vh;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .inputField > .label{
+        margin: 15px 10px 17px 19px;
+    }
+
+    .playerForm{
+        margin-top: 5vh;
+    }
+
+    .inputField > input {
+        font-size: 12px;
+    }
+
+    button#startGame{
+        height: 45px;
+        width: 280px;
+    }
+}
+
+/* @media screen and (min-width: 1024px)
+{
+    button#startGame{
+        height: 60px;
+        width: 380px;
+    }
+    .board{
+        grid-gap: 30px;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(3, auto);
+        max-width: 360px;
+        margin: 0 auto;
+    }
+    .controlButtons{
+        max-width: 300px;
+        margin: 25px auto;
+    }
+
+    .controlButtonsAlign{
+        margin-right: 38px;
+    }
+
+} */

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Airidas Žaliauskas">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Tic Tac Toe">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Tic Tac Toe Game</title>
+</head>
+<body>
+    <div class="game">
+        <form id="playerInformation">
+            <div class="playerForm">
+
+                <h1>Tic Tac Toe</h1>
+                <h3>Player Information</h3>
+
+                <div class="inputField">
+                    <p class="label">Name #1</p>
+                    <input type="text" id="firstPlayer" placeholder="Dave" maxlength="20">
+                </div>
+
+                <div class="inputField">
+                    <p class="label">Name #2</p>
+                    <input type="text" id="secondPlayer" placeholder="Michael" maxlength="20">
+                </div>
+
+                <button type="submit" id="startGame" disabled>Start Game</button>
+            </div>
+        </form>
+        <div id="gameBoard">
+            <h1>Tic Tac Toe</h1>
+            <h3><span id="firstPlayerName">Player</span> <span class="versus"> vs </span> <span id="secondPlayerName">Player</span></h3>
+            <h4><span id="firstPlayerScore">Value</span><span> : </span> <span id="secondPlayerScore">Value</span></h4>
+            <h4 id="statusText">Dave's (X) turn</h5>
+            <div class="board" id="board">
+                <div class="empty cell" cellIndex="0"></div>
+                <div class="empty cell" cellIndex="1"></div>
+                <div class="empty cell" cellIndex="2"></div>
+                <div class="empty cell" cellIndex="3"></div>
+                <div class="empty cell" cellIndex="4"></div>
+                <div class="empty cell" cellIndex="5"></div>
+                <div class="empty cell" cellIndex="6"></div>
+                <div class="empty cell" cellIndex="7"></div>
+                <div class="empty cell" cellIndex="8"></div>
+            </div>
+
+            <div class="controlButtons">
+                <button id="toInfo" class="gameBoardButton controlButtonsAlign" title="Quit session and go back to main page.">Back</button>
+                <button id="clearBoard" class="gameBoardButton controlButtonsAlign" disabled title="Clear the board and reset the game.">Clear</button>
+                <button id="resetScore" class="gameBoardButton" title="Reset current session score back to zero.">0:0</button>
+            </div>
+            
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
